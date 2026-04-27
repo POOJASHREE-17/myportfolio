@@ -1,0 +1,394 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Japanese-inspired design system with soft pastels and nature motifs */
+
+@layer base {
+  :root {
+    /* Base colors - soft and clean */
+    --background: 0 0% 99%;
+    --foreground: 215 25% 27%;
+
+    /* Card system - subtle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    /* Popover elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Cherry blossom pink primary */
+    --primary: 340 75% 88%;
+    --primary-foreground: 215 25% 27%;
+    --primary-glow: 340 100% 95%;
+
+    /* Navy blue secondary */
+    --secondary: 215 45% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Soft teal accent */
+    --accent: 180 55% 75%;
+    --accent-foreground: 215 25% 27%;
+    --accent-glow: 180 80% 90%;
+
+    /* Muted tones */
+    --muted: 340 20% 96%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Interactive elements */
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 340 25% 92%;
+    --input: 340 25% 94%;
+    --ring: 340 75% 88%;
+
+    /* Japanese-inspired gradients */
+    --gradient-sakura: linear-gradient(135deg, hsl(340 75% 88%), hsl(340 100% 95%));
+    --gradient-wave: linear-gradient(135deg, #75a1ab, #547683);
+    --gradient-sunset: linear-gradient(180deg, hsl(340 100% 95%), hsl(0 0% 99%));
+    --gradient-ocean: linear-gradient(45deg, hsl(180 80% 90%), hsl(215 45% 25%));
+
+    /* Shadows with soft pink glow */
+    --shadow-soft: 0 4px 20px -2px hsl(340 75% 88% / 0.25);
+    --shadow-glow: 0 8px 40px -8px hsl(340 100% 95% / 0.4);
+    --shadow-elegant: 0 12px 50px -12px hsl(215 45% 25% / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with navy base and warm highlights */
+    --background: 215 45% 8%;
+    --foreground: 340 50% 92%;
+
+    --card: 215 40% 12%;
+    --card-foreground: 340 50% 92%;
+
+    --popover: 215 40% 12%;
+    --popover-foreground: 340 50% 92%;
+
+    --primary: 340 75% 75%;
+    --primary-foreground: 215 45% 8%;
+    --primary-glow: 340 80% 85%;
+
+    --secondary: 215 35% 18%;
+    --secondary-foreground: 340 50% 92%;
+
+    --accent: 180 45% 65%;
+    --accent-foreground: 215 45% 8%;
+    --accent-glow: 180 60% 80%;
+
+    --muted: 215 35% 15%;
+    --muted-foreground: 340 25% 70%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 340 50% 92%;
+
+    --border: 215 30% 20%;
+    --input: 215 30% 18%;
+    --ring: 340 75% 75%;
+
+    /* Dark mode gradients */
+    --gradient-sakura: linear-gradient(135deg, hsl(340 75% 75%), hsl(340 80% 85%));
+    --gradient-wave: linear-gradient(135deg, #88b2bd, #75a1ab);
+    --gradient-sunset: linear-gradient(180deg, hsl(340 80% 85%), hsl(215 45% 8%));
+    --gradient-ocean: linear-gradient(45deg, hsl(180 60% 80%), hsl(215 45% 18%));
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(340 75% 75% / 0.15);
+    --shadow-glow: 0 8px 40px -8px hsl(340 80% 85% / 0.25);
+    --shadow-elegant: 0 12px 50px -12px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Japanese-inspired components */
+  .sakura-card {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-soft backdrop-blur-sm;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    transition: var(--transition-smooth);
+  }
+
+  .sakura-card:hover {
+    @apply shadow-glow;
+    transform: translateY(-4px);
+  }
+
+  .wave-button {
+    @apply relative overflow-hidden rounded-full px-8 py-3 font-medium;
+    background: var(--gradient-sakura);
+    color: hsl(var(--primary-foreground));
+    transition: var(--transition-smooth);
+  }
+
+  .wave-button:hover {
+    @apply shadow-glow;
+    transform: translateY(-2px);
+  }
+
+  .wave-button::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: var(--gradient-wave);
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  .wave-button:hover::before {
+    opacity: 1;
+  }
+
+  .wave-button > * {
+    @apply relative z-10;
+  }
+
+  .floating-petal {
+    @apply absolute pointer-events-none;
+    animation: float 8s infinite linear;
+  }
+
+  .section-divider {
+    @apply w-24 h-1 mx-auto rounded-full;
+    background: var(--gradient-wave);
+  }
+}
+
+@layer utilities {
+  .text-gradient-sakura {
+    background: var(--gradient-sakura);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-wave {
+    background: var(--gradient-wave);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+/* Add this to index.css */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 3s ease infinite;
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ===============================
+   Premium Pink Gradient Theme (Soft Girl Aesthetic)
+   =============================== */
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #f4aab9, #d87093);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 10px rgba(244, 170, 185, 0.4));
+}
+
+.text-gradient-accent-pink {
+  background: linear-gradient(90deg, #f8b4c4, #e68ca4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(248, 180, 196, 0.3));
+}
+
+/* Optional smooth gradient animation */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 4s ease infinite;
+}
+/* ===============================
+   BRIGHT Mouse-follow Sakura Petals
+   =============================== */
+
+.mouse-petals-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5; /* ABOVE BACKGROUND */
+}
+
+.mouse-petal {
+  position: absolute;
+  border-radius: 60% 40% 60% 40%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 105, 180, 1),
+    rgba(255, 182, 193, 0.9),
+    rgba(255, 182, 193, 0.4)
+  );
+
+  filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.9));
+  animation: petal-float 1.2s ease-out forwards;
+}
+
+@keyframes petal-float {
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.3) translate(-20px, -60px) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   Aesthetic Pink CTA Button (Soft & Pillowy)
+   =============================== */
+
+.pink-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 0.85rem 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #fff0f5, #fce4ec);
+  color: #c24b74; /* Softer dark text intensity */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(252, 228, 236, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pink-cta:hover {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0); 
+  color: #a63c5d;
+  box-shadow: 0 8px 25px rgba(248, 187, 208, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.pink-cta::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.pink-cta:hover::after {
+  opacity: 1;
+}
+
