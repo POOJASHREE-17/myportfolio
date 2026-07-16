@@ -8,22 +8,18 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const email = import.meta.env.VITE_CONTACT_EMAIL || "your-email@example.com";
-  const linkedin = import.meta.env.VITE_LINKEDIN_URL || "https://www.linkedin.com";
-  const github = import.meta.env.VITE_GITHUB_URL || "https://github.com";
-
   const contactMethods = [
     {
       icon: Mail,
       label: "Email",
-      value: email,
-      href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Portfolio Inquiry`,
+      value: "poojashree7378409@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry",
     },
     {
       icon: MessageSquare,
       label: "Let's Chat",
       value: "Connect on LinkedIn",
-      href: linkedin,
+      href: "https://www.linkedin.com/in/pooja-shreer",
     },
   ];
 
@@ -89,9 +85,9 @@ const ContactSection = () => {
         {/* SOCIAL ICONS (Pastel & Delicate) */}
         <div className="flex justify-center gap-10">
           {[
-            { Icon: Linkedin, href: linkedin },
-            { Icon: Github, href: github },
-            { Icon: Mail, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio...` }
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
+            { Icon: Github, href: "https://github.com/POOJASHREE-17" },
+            { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
           ].map(({ Icon, href }, i) => (
             <motion.a
               key={i}

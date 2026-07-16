@@ -3,9 +3,6 @@ import cherryBlossomPattern from "@/assets/cherry-blossom-pattern.jpg";
 import { Github, Linkedin, Mail, Heart, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
-  const email = import.meta.env.VITE_CONTACT_EMAIL || "your-email@example.com";
-  const linkedin = import.meta.env.VITE_LINKEDIN_URL || "https://www.linkedin.com";
-  const github = import.meta.env.VITE_GITHUB_URL || "https://github.com";
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
@@ -38,9 +35,9 @@ const HeroSection = () => {
           {/* SOCIAL ICONS */}
           <div className="flex gap-3">
             {[
-              { Icon: Linkedin, href: linkedin },
-              { Icon: Github, href: github },
-              { Icon: Mail, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio...` }
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
+              { Icon: Github, href: "https://github.com/POOJASHREE-17" },
+              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
             ].map(({ Icon, href }, index) => (
               <a
                 key={index}
@@ -155,9 +152,9 @@ const HeroSection = () => {
           {/* CENTER ICONS */}
           <div className="flex justify-center gap-6 pt-6">
             {[
-              { Icon: Linkedin, href: linkedin },
-              { Icon: Github, href: github },
-              { Icon: Mail, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio...` }
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
+              { Icon: Github, href: "https://github.com/POOJASHREE-17" },
+              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
             ].map(({ Icon, href }, i) => (
               <a 
                 key={i}
