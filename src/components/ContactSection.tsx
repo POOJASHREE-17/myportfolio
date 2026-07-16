@@ -13,7 +13,7 @@ const ContactSection = () => {
       icon: Mail,
       label: "Email",
       value: "poojashree7378409@gmail.com",
-      href: "mailto:poojashree7378409@gmail.com?subject=Portfolio Inquiry",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry",
     },
     {
       icon: MessageSquare,
@@ -61,7 +61,7 @@ const ContactSection = () => {
             <motion.a
               key={method.label}
               href={method.href}
-              target="_blank"
+              target={method.href.startsWith("mailto:") ? "_self" : "_blank"}
               rel="noopener noreferrer"
               initial={{ y: 20, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : {}}
@@ -87,7 +87,7 @@ const ContactSection = () => {
           {[
             { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
             { Icon: Github, href: "https://github.com/POOJASHREE-17" },
-            { Icon: Mail, href: "mailto:poojashree7378409@gmail.com?subject=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
+            { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
           ].map(({ Icon, href }, i) => (
             <motion.a
               key={i}
@@ -104,17 +104,6 @@ const ContactSection = () => {
             </motion.a>
           ))}
         </div>
-
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 1 }}
-          className="mt-20"
-        >
-          <p className="text-[10px] font-black text-pink-200 uppercase tracking-[0.5em]">
-            Made with Love & Sakura Petals
-          </p>
-        </motion.div>
       </div>
     </section>
   );

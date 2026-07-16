@@ -9,6 +9,19 @@ const InteractiveEnvelope = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Open mail client with prefilled form details
+    const recipient = "poojashree7378409@gmail.com";
+    const subject = encodeURIComponent(`Portfolio Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Hello Pooja,\n\nYou have received a new message from your portfolio contact form:\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`, '_blank');
+
     setIsSent(true);
     setTimeout(() => {
       setIsSent(false);

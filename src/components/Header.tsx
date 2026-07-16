@@ -22,7 +22,7 @@ const Header = () => {
           <a href="https://github.com/POOJASHREE-17" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
             <Github className="w-5 h-5 hover:text-primary transition" />
           </a>
-          <a href="mailto:poojashree7378409@gmail.com?subject=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
             <Mail className="w-5 h-5 hover:text-primary transition" />
           </a>
         </div>

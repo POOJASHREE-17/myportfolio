@@ -36,7 +36,7 @@ const HeroSection = () => {
             {[
               { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
               { Icon: Github, href: "https://github.com/POOJASHREE-17" },
-              { Icon: Mail, href: "mailto:poojashree7378409@gmail.com?subject=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
+              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
             ].map(({ Icon, href }, index) => (
               <a
                 key={index}
@@ -153,7 +153,7 @@ const HeroSection = () => {
             {[
               { Icon: Linkedin, href: "https://www.linkedin.com/in/pooja-shreer" },
               { Icon: Github, href: "https://github.com/POOJASHREE-17" },
-              { Icon: Mail, href: "mailto:poojashree7378409@gmail.com?subject=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
+              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." }
             ].map(({ Icon, href }, i) => (
               <a 
                 key={i}
