@@ -1,6 +1,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Header = () => {
+  const email = import.meta.env.VITE_CONTACT_EMAIL || "your-email@example.com";
+  const linkedin = import.meta.env.VITE_LINKEDIN_URL || "https://www.linkedin.com";
+  const github = import.meta.env.VITE_GITHUB_URL || "https://github.com";
+
   return (
     <header className="absolute top-0 left-0 w-full z-30">
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
@@ -16,13 +20,13 @@ const Header = () => {
 
         {/* Social Icons */}
         <div className="flex gap-2 text-foreground">
-          <a href="https://www.linkedin.com/in/pooja-shreer" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
             <Linkedin className="w-5 h-5 hover:text-primary transition" />
           </a>
-          <a href="https://github.com/POOJASHREE-17" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
+          <a href={github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
             <Github className="w-5 h-5 hover:text-primary transition" />
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=poojashree7378409@gmail.com&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio..." target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
+          <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Portfolio Inquiry&body=Hi Pooja, I came through your portfolio...`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-pink-100/70 transition-all duration-300">
             <Mail className="w-5 h-5 hover:text-primary transition" />
           </a>
         </div>

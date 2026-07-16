@@ -11,7 +11,7 @@ const InteractiveEnvelope = () => {
     e.preventDefault();
     
     // Open mail client with prefilled form details
-    const recipient = "poojashree7378409@gmail.com";
+    const recipient = import.meta.env.VITE_CONTACT_EMAIL || "your-email@example.com";
     const subject = encodeURIComponent(`Portfolio Message from ${formData.name}`);
     const body = encodeURIComponent(
       `Hello Pooja,\n\nYou have received a new message from your portfolio contact form:\n\n` +
@@ -253,7 +253,7 @@ const InteractiveEnvelope = () => {
               
               <div className="flex gap-4">
                 <a 
-                  href="https://www.linkedin.com/in/pooja-shreer" 
+                  href={import.meta.env.VITE_LINKEDIN_URL || "https://linkedin.com"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-pink-50 text-pink-500 rounded-full text-[10px] font-bold uppercase tracking-wider hover:bg-pink-100 transition-colors border border-pink-100"
@@ -261,7 +261,7 @@ const InteractiveEnvelope = () => {
                   Connect on LinkedIn
                 </a>
                 <a 
-                  href="https://github.com/POOJASHREE-17" 
+                  href={import.meta.env.VITE_GITHUB_URL || "https://github.com"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gray-50 text-gray-600 rounded-full text-[10px] font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors border border-gray-100"
